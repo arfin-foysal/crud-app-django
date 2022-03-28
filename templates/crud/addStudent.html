@@ -1,10 +1,18 @@
 {% extends 'base.html' %}
-
 {% block body %}
-<h1>Add Student</h1>
-<form action="" method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Add Student">
-</form>
+<div class=" row justify-content-center">
+    <div class="card" style="width: 50rem;">
+        <h1 class="text-center p-3" >Add Student</h1>
+        {% load crispy_forms_tags %}
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+           <div class="text-center p-3">
+            <input class="btn btn-success" type="submit" value="Add Student">
+            <div class="text-center pt-1">  <a class="btn btn-dark " href=" {% url 'crud:home' %}">Back</a></div>
+           </div>
+        </form>
+      </div>
+</div>
+
 {% endblock body %}

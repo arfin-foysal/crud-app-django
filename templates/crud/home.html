@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
 
 {% block body %}
+
+
 {% if student %}
 {% for stud in student %}
-  
-    <h1> <a href=" {% url 'crud:studentInfo' id=stud.id %}">{{stud.Fast_name}}</a></h1>
-{% endfor %}
 
+<div class="card text-center" >
+    <div class="card-body">
+      <h5 class="card-title ">{{stud.Fast_Name}}</h5>
+      <a  href="{% url 'crud:studentInfo' id=stud.id %}" class="btn btn-primary">View Info</a>
+    </div>
+  </div>
+  
+    
+{% endfor %}
 {% endif %}
 {% endblock body %}

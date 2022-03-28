@@ -7,7 +7,7 @@ from crud.models import Student
 
 
 def Home(request):
-    allstudent = Student.objects.order_by("Fast_name")
+    allstudent = Student.objects.order_by("Fast_Name")
     diction = {"title": "Home", "student": allstudent}
     return render(request, "crud/home.html", context=diction)
 

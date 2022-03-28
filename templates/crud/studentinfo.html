@@ -2,12 +2,31 @@
 
 {% block body %}
 
-     <h2>{{studentInfo.Fast_name}}</h2>
-     <h2>{{studentInfo.Last_name}}</h2>
-     <h2>{{studentInfo.Email}}</h2>
-     <h2>{{studentInfo.Phone}}</h2>
-     <h1> <a href=" {% url 'crud:updateInfo' id=studentInfo.id %}">update</a></h1>
-     <h1> <a href=" {% url 'crud:deleteInfo' id=studentInfo.id %}">Delete</a></h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{studentInfo.id}}</th>
+        <td>{{studentInfo.Fast_Name}} {{studentInfo.Last_Name}}</td>
+        <td>{{studentInfo.Email}}</td>
+        <td>{{studentInfo.Phone}}</td>
+        <td> <a class="btn btn-info" href=" {% url 'crud:updateInfo' id=studentInfo.id %}">update</a>
+         <a class="btn btn-danger" href=" {% url 'crud:deleteInfo' id=studentInfo.id %}">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+   
+  </table>
+ <div class="text-center">  <a class="btn btn-dark " href=" {% url 'crud:home' %}">Back</a></div>
+  
      
  
 {% endblock body %}
