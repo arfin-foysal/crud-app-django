@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+     <h2>{{studentInfo.Fast_name}}</h2>
+     <h2>{{studentInfo.Last_name}}</h2>
+     <h2>{{studentInfo.Email}}</h2>
+     <h2>{{studentInfo.Phone}}</h2>
+     <h1> <a href=" {% url 'crud:updateInfo' id=studentInfo.id %}">update</a></h1>
+     <h1> <a href=" {% url 'crud:deleteInfo' id=studentInfo.id %}">Delete</a></h1>
+     
+ 
+{% endblock body %}
